@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 // CORS middleware
 router.use((req, res, next) => {
     // Replace '*' with the appropriate origin(s) or configure it dynamically
-    res.setHeader("Access-Control-Allow-Origin", "https://radiant-revival-git-main-ankit-ransh.vercel.app");
+    res.setHeader("Access-Control-Allow-Origin", "*");
 
     // Add other allowed methods as needed
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
