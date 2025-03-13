@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js && stripe listen --forward-to https://stately-speculoos-dca868.netlify.app/webhook/webhook && stripe trigger payment_intent.succeeded",
+    "dev": "nodemon index.js && stripe listen --forward-to https://airy-wisdom-production.up.railway.app/webhook/webhook && stripe trigger payment_intent.succeeded",
     "build": "npm i"
   },
   "author": "",
