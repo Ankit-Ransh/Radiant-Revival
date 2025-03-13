@@ -5,7 +5,7 @@ const server = express();
 server.use(
     cors({
         origin: "*", // Replace "*" with specific domains for security
-        methods: ["GET", "POST", "OPTIONS"],
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
