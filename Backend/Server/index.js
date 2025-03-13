@@ -1,4 +1,7 @@
 // Cors and server
+require("dotenv").config();
+
+const port = process.env.PORT || 8080;
 const server = require("./config/middleWare")
 
 const register = require("./auth/register")
@@ -46,7 +49,7 @@ server.use("/stripe", stripe);
 const webhook = require("./services/webhook")
 server.use("/webhook", webhook);
 
-server.listen(8080, () => {
+server.listen(port, () => {
     console.log("Server Connected");
 });
 

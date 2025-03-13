@@ -1,8 +1,14 @@
-const {express,cors,bodyParser,path} = require("./imports")
+const { express, cors, bodyParser, path } = require("./imports")
 
 const server = express();
 
-server.use(cors());
+server.use(
+    cors({
+        origin: "*", // Replace "*" with specific domains for security
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 server.use(bodyParser.json());
 
 // Set the views directory to a custom location
@@ -24,7 +30,8 @@ server.use((req, res, next) => {
 
     // Handle preflight request
     if (req.method === "OPTIONS") {
-        return res.sendStatus(200);
+        res.sendStatus(204);
+        return;
     }
 
     // Set cache-control headers to prevent caching
